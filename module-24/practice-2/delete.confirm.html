@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Confirm</title>
+</head>
+<body>
+    <h2>Delete Confirm</h2>
+    <section>
+        <h3 id="delete-info">Deleted Data is here.</h3>
+        <input id="input-confirm" type="text">
+        <button id="delete-button" disabled>Delete</button>
+    </section>
+    <script>
+        document.getElementById('delete-button').addEventListener('click', function(){
+            document.getElementById('delete-info').style.display='none';
+        });
+
+        document.getElementById('input-confirm').addEventListener('focus', function(){
+            document.body.style.backgroundColor='lightCoral';
+        });
+
+        document.getElementById('input-confirm').addEventListener('blur', function(){
+            document.body.style.backgroundColor = 'white';
+        });
+        
+        // document.getElementById('input-confirm').addEventListener('keydown', function(){
+        //     const inputConfirm = document.getElementById('input-confirm');
+        //     console.log(inputConfirm.value);
+        // });
+
+        // document.getElementById('input-confirm').addEventListener('keypress', function(){
+        //     const inputConfirm = document.getElementById('input-confirm');
+        //     console.log(inputConfirm.value);
+        // });
+
+        document.getElementById('input-confirm').addEventListener('keyup', function(event){
+            const deleteButton = document.getElementById('delete-button');
+            if(event.target.value == 'delete'){
+                deleteButton.removeAttribute('disabled');
+            } else{
+                deleteButton.setAttribute('disabled', true);
+            }
+        });
+
+        // document.getElementById('input-confirm').addEventListener('change', function(){
+        //     const inputConfirm = document.getElementById('input-confirm');
+        //     console.log(inputConfirm.value);
+        // });
+
+
+    </script>
+</body>
+</html>

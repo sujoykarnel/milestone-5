@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #second-title{
+            background-color: rgb(186, 199, 174);
+        } */
+
+        /* .blog{
+            border: 2px solid orange;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 10px;
+        } */
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Welcome To My Blog Website</h1>
+        <section id="blogs" class="blogs">
+            <ul id="blog-list">
+                <li>Blog-1</li>
+                <li>Blog-2</li>
+                <li>Blog-3</li>
+            </ul>
+            <article class="blog">
+                <h3>My Blog -1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum odio inventore cum porro quaerat velit
+                    iste, ea placeat assumenda qui rem, eos nostrum necessitatibus, voluptatum pariatur minus ad illum
+                    commodi.</p>
+            </article>
+            <article id="second-blog" class="blog">
+                <h3 id="second-title">My Blog -2</h3>
+                <p>Molestias facere reiciendis officia commodi repellendus itaque praesentium eius libero harum ipsam
+                    reprehenderit doloremque maxime dicta omnis, sapiente veritatis voluptatem sequi vel? Tempore sequi,
+                    harum incidunt nisi nesciunt veritatis accusamus!</p>
+            </article>
+            <article class="blog">
+                <h3 id="third-title">My Blog -3</h3>
+                <p>Cum atque doloremque voluptates voluptate tempora temporibus odit vel dolorem quis non. Mollitia
+                    nihil, quas ducimus placeat amet sapiente iusto ipsa illum impedit omnis perspiciatis nulla,
+                    obcaecati repellat. Consequatur, culpa!</p>
+            </article>
+            <article class="blog">
+                <h3>My Blog -4</h3>
+                <p>Cum atque doloremque voluptates voluptate tempora temporibus odit vel dolorem quis non. Mollitia
+                    nihil, quas ducimus placeat amet sapiente iusto ipsa illum impedit omnis perspiciatis nulla,
+                    obcaecati repellat. Consequatur, culpa!</p>
+            </article>
+        </section>
+    </main>
+    <script>
+        // const student = { name: 'Sabbir', Age: 25 };
+        // // console.log(document.body);
+        const blogTitles = document.getElementsByTagName('h3');
+        for (const h3 of blogTitles) {
+            // console.log(h3.innerText);
+        }
+
+        const blogDetails = document.getElementsByTagName('p')
+        for (const p of blogDetails) {
+            // console.log(p.innerText);
+        }
+
+
+        const secondTitle = document.getElementById('second-title');
+        secondTitle.style.color = 'yellow';
+        secondTitle.style.textAlign = 'center';
+        const thitdTitle = document.getElementById('third-title');
+        thitdTitle.innerText = 'Title is Updated';
+        thitdTitle.style.backgroundColor = 'red'
+        thitdTitle.style.padding = '10px';
+        thitdTitle.style.fontSize = '30px'
+
+        
+        // add ul>li
+        const li = document.createElement('li');
+        li.innerText = 'Blog-4';
+        const ul = document.getElementById('blog-list');
+        ul.appendChild(li);
+
+        // add article
+        const article = document.createElement('article');
+        article.classList.add('blog')
+        const h3 = document.createElement('h3');
+        h3.innerText='My Blog-5';
+        const p = document.createElement('p');
+        p.innerText='Cum atque doloremque voluptates voluptate tempora temporibus odit vel dolorem quis non. Mollitia';
+        article.appendChild(h3);
+        article.appendChild(p);
+        const blogSection = document.getElementById('blogs');
+        blogSection.appendChild(article);
+
+        const blogs = document.getElementsByClassName('blog');
+        for (const blog of blogs) {
+            blog.style.border = '2px solid orange';
+            blog.style.borderRadius = '10px';
+            blog.style.margin = '5px';
+            blog.style.padding = '5px';
+        };
+
+    </script>
+</body>
+
+</html>

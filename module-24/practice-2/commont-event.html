@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common Event</title>
+</head>
+<body>
+    <h3>Common Event</h3>
+    <section>
+        <p id="paragraph"></p>
+        <input id="input-field" type="text">
+        <button id="pencil">Pencil</button>
+        <button id="book">Book</button>
+        <button onclick="isPen()">Pen</button>
+    </section>
+    <script>
+        document.getElementById('book').addEventListener('click', function(){
+            const p= document.getElementById('paragraph');
+            p.innerText = 'This is my book.';
+        });
+
+        function isPen(){
+            const p = document.getElementById('paragraph');
+            p.innerText='This is my pen.';
+        }
+
+        document.getElementById('pencil').addEventListener('click', function(){
+            const inputField = document.getElementById('input-field');
+            const p = document.getElementById('paragraph');
+            if(inputField.value !=''){
+                p.innerText= inputField.value;
+            } else{
+                p.innerText= 'Please Enter text in the box.';
+            }
+            inputField.value='';
+        })
+
+    </script>
+</body>
+</html>
